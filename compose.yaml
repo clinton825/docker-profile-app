@@ -21,6 +21,9 @@ services:
   mongodb:
     container_name: mongoDB
     image: mongo:8.0-rc
+    volumes:    # NEW
+         /Users/clintonbempah/simple-profile-app/data:/db/data
+
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=secret
