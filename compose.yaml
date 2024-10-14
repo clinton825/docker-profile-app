@@ -22,7 +22,7 @@ services:
     container_name: database
     image: mongo:8.0-rc
     volumes: 
-      - /Users/clintonbempah/simple-profile-app/data:/db/data  # Fixed the volumes format
+      - profiledata:/db/data  # Use named volume 'profiledata'
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=secret
@@ -43,3 +43,6 @@ services:
        - profile-network
     depends_on:
       - database
+
+volumes:
+  profiledata:  # Named volume declaration
